@@ -225,8 +225,8 @@ class mainWindow(QDialog):
         for key,value in self.trafoDict.items():
             trafoID = value[0]
             demandaKW = float(value[1])
-            kva = demanda/0.92
-            demandaKVAr = kva*0.08
+            kva = demandaKW/0.92
+            demandaKVAr = kva*0.39191835
 
             cursor.execute('update MODELO_CARGA set PD=?,PE=?,PF=?,QD=?,QE=?,QF=? where CARGA_ID=?'
             ,demandaKW/3,demandaKW/3,demandaKW/3
